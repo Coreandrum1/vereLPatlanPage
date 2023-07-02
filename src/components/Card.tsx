@@ -1,11 +1,10 @@
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable"; // The default
 import styles from "./Card.style.module.css";
-import MainWindow from "./MainWindow";
 import minimizeIcon from "../icons/🦆 icon _Window Minimize_.svg";
 import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
 
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 const Card = () => {
   const nodeRef = useRef(null);
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
@@ -15,6 +14,7 @@ const Card = () => {
   const [isClosed, setIsClosed] = useState<boolean>(false);
 
   const handleDrag = (e: DraggableEvent, data: DraggableData): void => {
+    e.preventDefault();
     const { x, y } = data;
     setPosition({ x, y });
   };

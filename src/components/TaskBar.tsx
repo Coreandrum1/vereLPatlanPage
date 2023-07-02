@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./TaskBar.style.module.css";
 import iconWindows from "../icons/🦆 icon _windows_.svg";
 import iconTwitter from "../icons/🦆 icon _twitter_.svg";

@@ -12,6 +12,7 @@ const MainWindow = () => {
   const [position, setPosition] = useState({ x: 100, y: 100 });
 
   const handleDrag = (e: DraggableEvent, data: DraggableData): void => {
+    e.preventDefault();
     const { x, y } = data;
     setPosition({ x, y });
   };
