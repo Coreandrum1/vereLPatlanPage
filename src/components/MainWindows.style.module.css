@@ -9,6 +9,7 @@
 
 .subContent {
   margin: 15px;
+  margin-top: 0;
   background-color: aliceblue;
   border: 2px solid rgba(54, 29, 199, 1);
   height: 100%;
@@ -16,7 +17,7 @@
 
 .subContentHeader {
   display: flex;
-  height: 60px;
+  height: 90px;
 }
 
 .container {
@@ -33,11 +34,13 @@
 }
 
 .tabOption {
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 27%;
   height: 40px;
+  margin-bottom: -2px;
   background-color: rgba(255, 198, 251, 1);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -45,6 +48,11 @@
   border-left: 2px solid rgba(54, 29, 199, 1);
   border-right: 2px solid rgba(54, 29, 199, 1);
   margin-right: 4px;
+}
+
+.inactiveTab {
+  background-color: #d5a2d9;
+  z-index: -1;
 }
 
 .tabOption h2 {
@@ -57,6 +65,7 @@
   align-items: center;
   width: 70%;
   padding-left: 15px;
+  gap: 4px;
 }
 
 .searchGroup input {

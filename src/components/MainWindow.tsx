@@ -5,6 +5,7 @@ import styles from "./MainWindows.style.module.css";
 import minimizeIcon from "../icons/🦆 icon _Window Minimize_.svg";
 import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
+import starIcon from "../icons/🦆 icon _star_.svg";
 
 const MainWindow = () => {
   const nodeRef = useRef(null);
@@ -24,10 +25,10 @@ const MainWindow = () => {
           <div className={styles.tabOption}>
             <h2>Home</h2>
           </div>
-          <div className={styles.tabOption}>
+          <div className={`${styles.tabOption} ${styles.inactiveTab}`}>
             <h2>Curriculum</h2>
           </div>
-          <div className={styles.tabOption}>
+          <div className={`${styles.tabOption} ${styles.inactiveTab}`}>
             <h2>Portfolio</h2>
           </div>
         </div>
@@ -35,7 +36,7 @@ const MainWindow = () => {
         <div className={styles.content}>
           <div className={styles.subContentHeader}>
             <div className={styles.searchGroup}>
-              <p>*</p>
+              <img src={starIcon} alt="" />
               <input type="text"></input>
             </div>
             <div className={styles.buttonsContainer}>
