@@ -9,7 +9,7 @@ const Card = () => {
   const nodeRef = useRef(null);
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
 
-  const [position, setPosition] = useState({ x: 400, y: 400 });
+  const [position, setPosition] = useState({ x: 300, y: 400 });
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [isClosed, setIsClosed] = useState<boolean>(false);
 
@@ -26,8 +26,7 @@ const Card = () => {
 
   const handleOnMaximize = () => {
     setIsMinimized(false);
-
-    setPosition({ x: 400, y: 400 });
+    setPosition({ x: 300, y: 400 });
   };
 
   const handleOnClose = () => {
@@ -40,7 +39,6 @@ const Card = () => {
       {!isClosed && (
         <Draggable
           nodeRef={nodeRef}
-          defaultPosition={{ x: 400, y: 400 }}
           onDrag={handleDrag}
           position={position}
           handle=".drag-handle"

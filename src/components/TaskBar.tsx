@@ -1,6 +1,6 @@
 import styles from "./TaskBar.style.module.css";
 import iconWindows from "../icons/🦆 icon _windows_.svg";
-import iconTwitter from "../icons/🦆 icon _twitter_.svg";
+import iconTwitter from "../icons/🦆 icon _twitter_.png";
 import iconInstagram from "../icons/🦆 icon _Instagram_.svg";
 import iconFacebook from "../icons/🦆 icon _facebook_.svg";
 import { useState, useEffect } from "react";

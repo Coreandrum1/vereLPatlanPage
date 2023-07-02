@@ -53,3 +53,7 @@
   border: 2px solid rgba(54, 29, 199, 1);
   border-color: rgba(54, 29, 199, 1);
 }
+
+.startIcons img {
+  width: 35px;
+}

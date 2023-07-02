@@ -1,16 +1,19 @@
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 import { useRef, useState } from "react";
-
 import styles from "./MainWindows.style.module.css";
 import minimizeIcon from "../icons/🦆 icon _Window Minimize_.svg";
 import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
 import starIcon from "../icons/🦆 icon _star_.svg";
 
-const MainWindow = () => {
-  const nodeRef = useRef(null);
+interface IProps {
+  selected: "home" | "curriculum" | "portfolio";
+  selectedHandler: (tab: "home" | "curriculum" | "portfolio") => void;
+}
 
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
+  const nodeRef = useRef(null);
+  const [position, setPosition] = useState({ x: 450, y: 50 });
 
   const handleDrag = (e: DraggableEvent, data: DraggableData): void => {
     e.preventDefault();
@@ -22,13 +25,31 @@ const MainWindow = () => {
     <Draggable nodeRef={nodeRef} onDrag={handleDrag} position={position}>
       <div ref={nodeRef} className={styles.container}>
         <div className={styles.tabContainer}>
-          <div className={styles.tabOption}>
+          <div
+            className={`${styles.tabOption} ${
+              selected !== "home" && styles.inactiveTab
+            }`}
+            onClick={() => {
+              console.log("triggered");
+              selectedHandler("home");
+            }}
+          >
             <h2>Home</h2>
           </div>
-          <div className={`${styles.tabOption} ${styles.inactiveTab}`}>
+          <div
+            className={`${styles.tabOption} ${
+              selected !== "curriculum" && styles.inactiveTab
+            }`}
+            onClick={() => selectedHandler("curriculum")}
+          >
             <h2>Curriculum</h2>
           </div>
-          <div className={`${styles.tabOption} ${styles.inactiveTab}`}>
+          <div
+            className={`${styles.tabOption} ${
+              selected !== "portfolio" && styles.inactiveTab
+            }`}
+            onClick={() => selectedHandler("portfolio")}
+          >
             <h2>Portfolio</h2>
           </div>
         </div>
