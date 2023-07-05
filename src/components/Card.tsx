@@ -1,38 +1,36 @@
-import Draggable, { DraggableData, DraggableEvent } from "react-draggable"; // The default
+import Draggable from "react-draggable"; // The default
 import styles from "./Card.style.module.css";
 import minimizeIcon from "../icons/🦆 icon _Window Minimize_.svg";
 import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
+import useWindowButtons from "../hooks/useWindowButtons";
+import { useRef } from "react";
 
-import { useRef, useState } from "react";
-const Card = () => {
+interface IProps {
+  windowTitle?: string;
+  subContentComponent?: React.ReactNode | string;
+  propPosition: {
+    x: number;
+    y: number;
+  };
+}
+
+const Card: React.FC<IProps> = ({
+  windowTitle,
+  subContentComponent,
+  propPosition,
+}) => {
   const nodeRef = useRef(null);
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
 
-  const [position, setPosition] = useState({ x: 300, y: 400 });
-  const [isMinimized, setIsMinimized] = useState<boolean>(false);
-  const [isClosed, setIsClosed] = useState<boolean>(false);
-
-  const handleDrag = (e: DraggableEvent, data: DraggableData): void => {
-    e.preventDefault();
-    const { x, y } = data;
-    setPosition({ x, y });
-  };
-
-  const handleOnMinimize = () => {
-    setPosition({ x: 0, y: windowSize.current[1] - 100 });
-    setIsMinimized(true);
-  };
-
-  const handleOnMaximize = () => {
-    setIsMinimized(false);
-    setPosition({ x: 300, y: 400 });
-  };
-
-  const handleOnClose = () => {
-    setIsClosed(true);
-    //will be close until page reload
-  };
+  const {
+    isClosed,
+    handleDrag,
+    position,
+    handleOnClose,
+    handleOnMinimize,
+    handleOnMaximize,
+    isMinimized,
+  } = useWindowButtons(propPosition.x, propPosition.y);
 
   return (
     <>
@@ -45,7 +43,7 @@ const Card = () => {
         >
           <article ref={nodeRef} className={styles.container}>
             <div className={`${styles.windowHeader} drag-handle`}>
-              <h2 className={styles.windowTitle}>Profile</h2>
+              <h2 className={styles.windowTitle}>{windowTitle}</h2>
               <div className={styles.buttonsContainer}>
                 <img
                   src={minimizeIcon}
@@ -56,7 +54,9 @@ const Card = () => {
                 <img src={closeIcon} onClick={handleOnClose}></img>
               </div>
             </div>
-            {!isMinimized && <div className={styles.subContainer}></div>}
+            {!isMinimized && (
+              <div className={styles.subContainer}>{subContentComponent}</div>
+            )}
           </article>
         </Draggable>
       )}
