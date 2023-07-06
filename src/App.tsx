@@ -2,7 +2,7 @@ import "./App.css";
 import MainWindow from "./components/MainWindow";
 import TaskBar from "./components/TaskBar";
 import DesktopIcons from "./components/DesktopIcons";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Card from "./components/Card";
 import FormattedPlainText from "./components/FormattedPlainText";
 import { useLocation } from "react-router-dom";
@@ -12,6 +12,7 @@ type PageType = "home" | "curriculum" | "portfolio";
 
 function App() {
   const location = useLocation();
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   const currPath = location.pathname.replace("/", "") || "home";
   const [selectedTab, setSelectedTab] = useState<PageType>(
     currPath as PageType
@@ -24,7 +25,10 @@ function App() {
       {(location.pathname === "/home" || location.pathname === "/") && (
         <Card
           windowTitle="Profile"
-          propPosition={{ x: 300, y: 400 }}
+          propPosition={{
+            x: windowSize.current[0] * 0.15,
+            y: windowSize.current[1] * 0.4,
+          }}
           height={300}
           width={400}
         />
@@ -33,9 +37,12 @@ function App() {
       {(location.pathname === "/home" || location.pathname === "/") && (
         <Card
           windowTitle="About Me"
-          propPosition={{ x: 1300, y: 400 }}
-          height={300}
-          width={400}
+          propPosition={{
+            x: windowSize.current[0] * 0.6,
+            y: windowSize.current[1] * 0.45,
+          }}
+          height={250}
+          width={600}
           subContentComponent={
             <FormattedPlainText
               text="Hey there! I'm Verenice López, a passionate graphic designer on a
@@ -51,7 +58,10 @@ function App() {
       {location.pathname === "/curriculum" && (
         <Card
           windowTitle="Software skills"
-          propPosition={{ x: 300, y: 400 }}
+          propPosition={{
+            x: windowSize.current[0] * 0.15,
+            y: windowSize.current[1] * 0.45,
+          }}
           height={300}
           width={600}
           subContentComponent={<SkillList />}
