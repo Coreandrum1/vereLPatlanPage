@@ -1,12 +1,12 @@
 import {
-  createBrowserRouter,
   Route,
   createRoutesFromElements,
+  createHashRouter,
 } from "react-router-dom";
 import App from "../App";
 import FormattedPlainText from "../components/FormattedPlainText";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <>
       <Route path={``} element={<App />}>
@@ -32,8 +32,9 @@ const router = createBrowserRouter(
         ></Route>
       </Route>
     </>
-  ),
-  { basename: `${import.meta.env.BASE_URL}` }
+  )
+  // { basename: `${import.meta.env.BASE_URL}` }
+  // commented this due to hash router usage intead of browser router
 );
 
 export default router;
