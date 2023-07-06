@@ -50,6 +50,7 @@ const SkillList = () => {
           <h4>Adobe After Effects</h4>
           <div className={styles.progressBar}>
             <div className={styles.progress} style={{ width: "50%" }}></div>
+            <>{console.log(import.meta.env)}</>
           </div>
         </div>
       </div>

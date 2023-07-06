@@ -14,7 +14,7 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
   return (
     <div className={styles.container}>
       <Link
-        to={"/vereLPatlanPage/home"}
+        to={"/home"}
         ref={nodeRef}
         className={styles.folderContainer}
         onClick={() => selectedHandler("home")}
@@ -25,7 +25,7 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
         <p>Home</p>
       </Link>
       <Link
-        to={"/vereLPatlanPage/curriculum"}
+        to={"/curriculum"}
         className={styles.folderContainer}
         onClick={() => selectedHandler("curriculum")}
       >
@@ -35,7 +35,7 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
         <p>Curriculum</p>
       </Link>
       <Link
-        to={"/vereLPatlanPage/portfolio"}
+        to={"/portfolio"}
         className={styles.folderContainer}
         onClick={() => selectedHandler("portfolio")}
       >

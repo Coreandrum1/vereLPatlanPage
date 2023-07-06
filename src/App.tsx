@@ -18,7 +18,7 @@ function App() {
     <>
       <MainWindow selected={selectedTab} selectedHandler={setSelectedTab} />
       <DesktopIcons selected={selectedTab} selectedHandler={setSelectedTab} />
-      {location.pathname === "/vereLPatlanPage/home" && (
+      {location.pathname === "/home" && (
         <Card
           windowTitle="Profile"
           propPosition={{ x: 300, y: 400 }}
@@ -27,7 +27,7 @@ function App() {
         />
       )}
 
-      {location.pathname === "/vereLPatlanPage/home" && (
+      {location.pathname === "/home" && (
         <Card
           windowTitle="About Me"
           propPosition={{ x: 1300, y: 400 }}
@@ -45,7 +45,7 @@ function App() {
           }
         />
       )}
-      {location.pathname === "/vereLPatlanPage/curriculum" && (
+      {location.pathname === "/curriculum" && (
         <Card
           windowTitle="Software skills"
           propPosition={{ x: 300, y: 400 }}

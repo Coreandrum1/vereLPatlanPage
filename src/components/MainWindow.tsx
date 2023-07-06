@@ -28,7 +28,7 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
       <div ref={nodeRef} className={styles.container}>
         <div className={styles.tabContainer}>
           <Link
-            to={"/vereLPatlanPage/home"}
+            to={"/home"}
             className={`${styles.tabOption} ${
               selected !== "home" && styles.inactiveTab
             }`}
@@ -40,7 +40,7 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
             <h2>Home</h2>
           </Link>
           <Link
-            to={"/vereLPatlanPage/curriculum"}
+            to={"/curriculum"}
             className={`${styles.tabOption} ${
               selected !== "curriculum" && styles.inactiveTab
             }`}
@@ -49,7 +49,7 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
             <h2>Curriculum</h2>
           </Link>
           <Link
-            to={"/vereLPatlanPage/portfolio"}
+            to={"/portfolio"}
             className={`${styles.tabOption} ${
               selected !== "portfolio" && styles.inactiveTab
             }`}

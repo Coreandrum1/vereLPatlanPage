@@ -9,30 +9,31 @@ import FormattedPlainText from "../components/FormattedPlainText";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/vereLPatlanPage" element={<App />}>
+      <Route path={`/`} element={<App />}>
         <Route
-          path="/vereLPatlanPage"
+          path="/"
           index
           element={<FormattedPlainText text="home" />}
         ></Route>
         <Route
-          path="/vereLPatlanPage/home"
+          path="/home"
           index
           element={<FormattedPlainText text="home" />}
         ></Route>
         <Route
-          path="/vereLPatlanPage/curriculum"
+          path="/curriculum"
           index
           element={<FormattedPlainText text="curriculum" />}
         ></Route>
         <Route
-          path="/vereLPatlanPage/portfolio"
+          path="/portfolio"
           index
           element={<FormattedPlainText text="portfolio" />}
         ></Route>
       </Route>
     </>
-  )
+  ),
+  { basename: `${import.meta.env.BASE_URL}` }
 );
 
 export default router;
