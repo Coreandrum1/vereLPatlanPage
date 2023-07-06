@@ -8,11 +8,14 @@ import FormattedPlainText from "./components/FormattedPlainText";
 import { useLocation } from "react-router-dom";
 import SkillList from "./components/SkillList";
 
+type PageType = "home" | "curriculum" | "portfolio";
+
 function App() {
   const location = useLocation();
-  const [selectedTab, setSelectedTab] = useState<
-    "home" | "curriculum" | "portfolio"
-  >("home");
+  const currPath = location.pathname.replace("/", "") || "home";
+  const [selectedTab, setSelectedTab] = useState<PageType>(
+    currPath as PageType
+  );
 
   return (
     <>
