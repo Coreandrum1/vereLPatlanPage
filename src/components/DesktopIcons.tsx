@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import styles from "./DesktopIcons.styles.module.css";
 import folderClosedIcon from "../icons/🦆 icon _folder_.svg";
 import folderOpenIcon from "../icons/🦆 icon _opened folder_.svg";
+import { Link } from "react-router-dom";
 
 interface IProps {
   selected: "home" | "curriculum" | "portfolio";
@@ -12,7 +13,8 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
   const nodeRef = useRef(null);
   return (
     <div className={styles.container}>
-      <div
+      <Link
+        to={"/vereLPatlanPage/home"}
         ref={nodeRef}
         className={styles.folderContainer}
         onClick={() => selectedHandler("home")}
@@ -21,8 +23,9 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
           src={selected === "home" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Home</p>
-      </div>
-      <div
+      </Link>
+      <Link
+        to={"/vereLPatlanPage/curriculum"}
         className={styles.folderContainer}
         onClick={() => selectedHandler("curriculum")}
       >
@@ -30,8 +33,9 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
           src={selected === "curriculum" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Curriculum</p>
-      </div>
-      <div
+      </Link>
+      <Link
+        to={"/vereLPatlanPage/portfolio"}
         className={styles.folderContainer}
         onClick={() => selectedHandler("portfolio")}
       >
@@ -39,7 +43,7 @@ const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
           src={selected === "portfolio" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Porfolio</p>
-      </div>
+      </Link>
     </div>
   );
 };

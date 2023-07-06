@@ -5,6 +5,7 @@ import minimizeIcon from "../icons/🦆 icon _Window Minimize_.svg";
 import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
 import starIcon from "../icons/🦆 icon _star_.svg";
+import { Outlet } from "react-router-dom";
 
 interface IProps {
   selected: "home" | "curriculum" | "portfolio";
@@ -69,7 +70,9 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
               <img src={closeIcon}></img>
             </div>
           </div>
-          <div className={styles.subContent}></div>
+          <div className={styles.subContent}>
+            <Outlet></Outlet>
+          </div>
         </div>
       </div>
     </Draggable>

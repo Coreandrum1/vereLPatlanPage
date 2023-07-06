@@ -5,6 +5,7 @@ import TaskBar from "./components/TaskBar";
 import DesktopIcons from "./components/DesktopIcons";
 import { useState } from "react";
 import FormattedPlainText from "./components/FormattedPlainText";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState<
@@ -13,8 +14,9 @@ function App() {
 
   return (
     <>
-      <DesktopIcons selected={selectedTab} selectedHandler={setSelectedTab} />
       <MainWindow selected={selectedTab} selectedHandler={setSelectedTab} />
+      <DesktopIcons selected={selectedTab} selectedHandler={setSelectedTab} />
+      {/*
       <Card windowTitle="Profile" propPosition={{ x: 300, y: 400 }} />
       <Card
         windowTitle="About Me"
@@ -30,6 +32,7 @@ function App() {
           />
         }
       />
+       */}
 
       <TaskBar />
     </>
