@@ -6,6 +6,7 @@ import maximizeIcon from "../icons/🦆 icon _window maximize_.svg";
 import closeIcon from "../icons/🦆 icon _window close_.svg";
 import starIcon from "../icons/🦆 icon _star_.svg";
 import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface IProps {
   selected: "home" | "curriculum" | "portfolio";
@@ -26,7 +27,8 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
     <Draggable nodeRef={nodeRef} onDrag={handleDrag} position={position}>
       <div ref={nodeRef} className={styles.container}>
         <div className={styles.tabContainer}>
-          <div
+          <Link
+            to={"/vereLPatlanPage/home"}
             className={`${styles.tabOption} ${
               selected !== "home" && styles.inactiveTab
             }`}
@@ -36,23 +38,25 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
             }}
           >
             <h2>Home</h2>
-          </div>
-          <div
+          </Link>
+          <Link
+            to={"/vereLPatlanPage/curriculum"}
             className={`${styles.tabOption} ${
               selected !== "curriculum" && styles.inactiveTab
             }`}
             onClick={() => selectedHandler("curriculum")}
           >
             <h2>Curriculum</h2>
-          </div>
-          <div
+          </Link>
+          <Link
+            to={"/vereLPatlanPage/portfolio"}
             className={`${styles.tabOption} ${
               selected !== "portfolio" && styles.inactiveTab
             }`}
             onClick={() => selectedHandler("portfolio")}
           >
             <h2>Portfolio</h2>
-          </div>
+          </Link>
         </div>
 
         <div className={styles.content}>

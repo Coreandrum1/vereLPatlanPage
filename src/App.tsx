@@ -1,11 +1,8 @@
 import "./App.css";
-import Card from "./components/Card";
 import MainWindow from "./components/MainWindow";
 import TaskBar from "./components/TaskBar";
 import DesktopIcons from "./components/DesktopIcons";
 import { useState } from "react";
-import FormattedPlainText from "./components/FormattedPlainText";
-import { Outlet } from "react-router-dom";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState<

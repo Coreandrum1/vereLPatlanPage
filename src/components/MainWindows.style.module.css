@@ -52,6 +52,7 @@
   border-right: 2px solid rgba(54, 29, 199, 1);
   margin-right: 4px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .inactiveTab {
