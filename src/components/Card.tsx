@@ -13,12 +13,16 @@ interface IProps {
     x: number;
     y: number;
   };
+  height: number;
+  width: number;
 }
 
 const Card: React.FC<IProps> = ({
   windowTitle,
   subContentComponent,
   propPosition,
+  height,
+  width,
 }) => {
   const nodeRef = useRef(null);
 
@@ -41,7 +45,11 @@ const Card: React.FC<IProps> = ({
           position={position}
           handle=".drag-handle"
         >
-          <article ref={nodeRef} className={styles.container}>
+          <article
+            ref={nodeRef}
+            className={styles.container}
+            style={{ width: `${width}px` }}
+          >
             <div className={`${styles.windowHeader} drag-handle`}>
               <h2 className={styles.windowTitle}>{windowTitle}</h2>
               <div className={styles.buttonsContainer}>
@@ -55,7 +63,12 @@ const Card: React.FC<IProps> = ({
               </div>
             </div>
             {!isMinimized && (
-              <div className={styles.subContainer}>{subContentComponent}</div>
+              <div
+                className={styles.subContainer}
+                style={{ height: `${height}px` }}
+              >
+                {subContentComponent}
+              </div>
             )}
           </article>
         </Draggable>
