@@ -52,6 +52,12 @@
   border: none;
   border: 2px solid rgba(54, 29, 199, 1);
   border-color: rgba(54, 29, 199, 1);
+  padding: 12px 15px;
+  color: rgba(54, 29, 199, 1);
+}
+
+.searchInput:focus {
+  outline: none;
 }
 
 .startIcons img {

@@ -24,9 +24,14 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
   };
 
   return (
-    <Draggable nodeRef={nodeRef} onDrag={handleDrag} position={position}>
+    <Draggable
+      nodeRef={nodeRef}
+      onDrag={handleDrag}
+      position={position}
+      handle=".drag-handle"
+    >
       <div ref={nodeRef} className={styles.container}>
-        <div className={styles.tabContainer}>
+        <div className={`${styles.tabContainer} `}>
           <Link
             to={"/home"}
             className={`${styles.tabOption} ${
@@ -60,7 +65,7 @@ const MainWindow: React.FC<IProps> = ({ selected, selectedHandler }) => {
         </div>
 
         <div className={styles.content}>
-          <div className={styles.subContentHeader}>
+          <div className={`${styles.subContentHeader} drag-handle`}>
             <div className={styles.searchGroup}>
               <img src={starIcon} alt="" />
               <input type="text"></input>
