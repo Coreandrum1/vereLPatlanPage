@@ -18,7 +18,7 @@ function App() {
     <>
       <MainWindow selected={selectedTab} selectedHandler={setSelectedTab} />
       <DesktopIcons selected={selectedTab} selectedHandler={setSelectedTab} />
-      {location.pathname === "/home" && (
+      {(location.pathname === "/home" || location.pathname === "/") && (
         <Card
           windowTitle="Profile"
           propPosition={{ x: 300, y: 400 }}
@@ -27,7 +27,7 @@ function App() {
         />
       )}
 
-      {location.pathname === "/home" && (
+      {(location.pathname === "/home" || location.pathname === "/") && (
         <Card
           windowTitle="About Me"
           propPosition={{ x: 1300, y: 400 }}

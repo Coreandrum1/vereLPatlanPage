@@ -9,9 +9,9 @@ import FormattedPlainText from "../components/FormattedPlainText";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path={`/`} element={<App />}>
+      <Route path={``} element={<App />}>
         <Route
-          path="/"
+          path=""
           index
           element={<FormattedPlainText text="home" />}
         ></Route>
