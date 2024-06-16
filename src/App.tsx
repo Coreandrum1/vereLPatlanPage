@@ -1,12 +1,12 @@
 import "./App.css";
-import MainWindow from "./components/MainWindow";
-import TaskBar from "./components/TaskBar";
-import DesktopIcons from "./components/DesktopIcons";
+import MainWindow from "./components/mainWindow/MainWindow";
+import TaskBar from "./components/taskbar/TaskBar";
+import DesktopIcons from "./components/desktopIcons/DesktopIcons";
 import { useState, useRef } from "react";
-import Card from "./components/Card";
-import FormattedPlainText from "./components/FormattedPlainText";
+import Card from "./components/card/Card";
+import FormattedPlainText from "./components/formattedPlainText/FormattedPlainText";
 import { useLocation } from "react-router-dom";
-import SkillList from "./components/SkillList";
+import SkillList from "./components/skillList/SkillList";
 
 type PageType = "home" | "curriculum" | "portfolio";
 
@@ -67,9 +67,6 @@ function App() {
           subContentComponent={<SkillList />}
         />
       )}
-
-      {/*
-       */}
 
       <TaskBar />
     </>

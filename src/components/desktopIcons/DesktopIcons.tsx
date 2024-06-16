@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import styles from "./DesktopIcons.styles.module.css";
-import folderClosedIcon from "../icons/🦆 icon _folder_.svg";
-import folderOpenIcon from "../icons/🦆 icon _opened folder_.svg";
+import { useRef } from "react";
+import "./DesktopIcons.css";
+import folderClosedIcon from "../../icons/🦆 icon _folder_.svg";
+import folderOpenIcon from "../../icons/🦆 icon _opened folder_.svg";
 import { Link } from "react-router-dom";
 
 interface IProps {
@@ -9,37 +9,40 @@ interface IProps {
   selectedHandler: (tab: "home" | "curriculum" | "portfolio") => void;
 }
 
-const DesktopIcons: React.FC<IProps> = ({ selected, selectedHandler }) => {
+const DesktopIcons = ({ selected, selectedHandler }: IProps) => {
   const nodeRef = useRef(null);
   return (
-    <div className={styles.container}>
+    <div className="desktopIconContainer">
       <Link
         to={"/home"}
         ref={nodeRef}
-        className={styles.folderContainer}
+        className="folderContainer"
         onClick={() => selectedHandler("home")}
       >
         <img
+          alt="home"
           src={selected === "home" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Home</p>
       </Link>
       <Link
         to={"/curriculum"}
-        className={styles.folderContainer}
+        className="folderContainer"
         onClick={() => selectedHandler("curriculum")}
       >
         <img
+          alt="curriculum"
           src={selected === "curriculum" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Curriculum</p>
       </Link>
       <Link
         to={"/portfolio"}
-        className={styles.folderContainer}
+        className="folderContainer"
         onClick={() => selectedHandler("portfolio")}
       >
         <img
+          alt="portfolio"
           src={selected === "portfolio" ? folderOpenIcon : folderClosedIcon}
         ></img>
         <p>Porfolio</p>
