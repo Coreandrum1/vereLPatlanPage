@@ -44,6 +44,7 @@ const Card: React.FC<IProps> = ({
           onDrag={handleDrag}
           position={position}
           handle=".drag-handle"
+          offsetParent={document.body}
         >
           <article
             ref={nodeRef}

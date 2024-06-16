@@ -68,9 +68,6 @@ function App() {
         />
       )}
 
-      {/*
-       */}
-
       <TaskBar />
     </>
   );
