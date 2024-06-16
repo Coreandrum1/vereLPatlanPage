@@ -1,12 +1,12 @@
-import styles from "./TaskBar.style.module.css";
-import iconWindows from "../icons/🦆 icon _windows_.svg";
-import iconTwitter from "../icons/🦆 icon _twitter_.png";
-import iconInstagram from "../icons/🦆 icon _Instagram_.svg";
-import iconFacebook from "../icons/🦆 icon _facebook_.svg";
+import "./TaskBar.css";
+import iconWindows from "../../icons/🦆 icon _windows_.svg";
+import iconTwitter from "../../icons/🦆 icon _twitter_.png";
+import iconInstagram from "../../icons/🦆 icon _Instagram_.svg";
+import iconFacebook from "../../icons/🦆 icon _facebook_.svg";
 import { useState, useEffect } from "react";
 import moment from "moment";
 
-const TaskBar: React.FC = () => {
+const TaskBar = () => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -20,23 +20,23 @@ const TaskBar: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.stickyNavbar}>
-      <div className={styles.startIcons}>
-        <img src={iconWindows}></img>
-        <input className={styles.searchInput} type="text"></input>
+    <div className="stickyNavbar">
+      <div className="startIcons">
+        <img alt="windows" src={iconWindows}></img>
+        <input className="searchInput" type="text"></input>
       </div>
-      <div className={styles.middleIcons}>
+      <div className="middleIcons">
         <a href="https://www.instagram.com/pepperjam89/" target="_blank">
-          <img src={iconTwitter}></img>
+          <img alt="twitter" src={iconTwitter}></img>
         </a>
         <a href="https://www.instagram.com/pepperjam89/" target="_blank">
-          <img src={iconInstagram}></img>
+          <img alt="instagram" src={iconInstagram}></img>
         </a>
         <a href="https://www.instagram.com/pepperjam89/" target="_blank">
-          <img src={iconFacebook}></img>
+          <img alt="facebook" src={iconFacebook}></img>
         </a>
       </div>
-      <div className={styles.endIcons}>
+      <div className="endIcons">
         <h2>
           {moment().format("L")}, {moment(time).format("LTS")}
         </h2>
