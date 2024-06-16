@@ -4,7 +4,7 @@ import {
   createHashRouter,
 } from "react-router-dom";
 import App from "../App";
-import FormattedPlainText from "../components/FormattedPlainText";
+import FormattedPlainText from "../components/formattedPlainText/FormattedPlainText";
 
 const router = createHashRouter(
   createRoutesFromElements(
