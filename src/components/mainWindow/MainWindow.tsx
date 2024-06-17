@@ -19,7 +19,7 @@ const MainWindow: React.FC<IProps> = ({
 }: IProps) => {
   const nodeRef = useRef<HTMLDivElement>(null);
   const { width, height } = useWindowSize();
-  const [position, setPosition] = useState({ x: width / 8, y: 50 });
+  const [position, setPosition] = useState({ x: width / 10 + 50, y: 50 });
   const [elementSize, setElementSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {

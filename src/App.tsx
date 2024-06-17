@@ -19,15 +19,15 @@ function App() {
   );
 
   return (
-    <>
+    <main className="appContainer">
       <MainWindow selected={selectedTab} selectedHandler={setSelectedTab} />
       <DesktopIcons selected={selectedTab} selectedHandler={setSelectedTab} />
       {(location.pathname === "/home" || location.pathname === "/") && (
         <Card
           windowTitle="Profile"
           propPosition={{
-            x: windowSize.current[0] * 0.15,
-            y: windowSize.current[1] * 0.4,
+            x: 0,
+            y: 0,
           }}
           height={300}
           width={400}
@@ -69,7 +69,7 @@ function App() {
       )}
 
       <TaskBar />
-    </>
+    </main>
   );
 }
 

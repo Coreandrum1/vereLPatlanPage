@@ -7,8 +7,7 @@ const useWindowButtons = (x: number, y: number) => {
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
   const [isClosed, setIsClosed] = useState<boolean>(false);
 
-  const handleDrag = (e: DraggableEvent, data: DraggableData): void => {
-    e.preventDefault();
+  const handleDrag = (_e: DraggableEvent, data: DraggableData): void => {
     const { x, y } = data;
     setPosition({ x, y });
   };
