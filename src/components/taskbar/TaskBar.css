@@ -1,6 +1,6 @@
 .stickyNavbar {
+  z-index: 1;
   overflow: hidden;
-  background-color: #333;
   position: fixed;
   bottom: 0;
   left: 0;

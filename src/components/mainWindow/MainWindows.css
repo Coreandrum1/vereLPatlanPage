@@ -1,11 +1,11 @@
 .mainWindowContainer {
-  position: absolute;
-  display: flex;
   flex-direction: column;
-  width: 60%;
-  min-width: 500px;
+  box-sizing: border-box;
+  width: 70dvw;
   height: 70%;
+  display: flex;
   z-index: 1;
+  position: absolute;
 
   .content {
     display: flex;
@@ -103,5 +103,12 @@
 
   .buttonsContainer img {
     width: 20px;
+  }
+}
+@media (width <= 1000px) {
+  .mainWindowContainer {
+    width: 100%;
+    height: calc(100% - 79px);
+    transform: translate(0, 0) !important;
   }
 }
